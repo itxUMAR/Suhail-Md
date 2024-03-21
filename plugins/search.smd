@@ -58,7 +58,7 @@ const fetch = require('node-fetch')
             let h =`*TITLE: _${data.title}_* \n*ARTIST: _${data.artists}_*\n *ALBUM:* _${data.album}_ `
 //   *𝚁𝚎𝚕𝚎𝚊𝚜𝚎:* _${data.release_date}
            await message.bot.sendUi(message.jid, { caption: h,  },{quoted : message} , "text",'true' );
-       }catch(e){return await message.error(`${e}\n\n command: find`,e,`*_Didn't get any results, Sorry!_*`) }
+       }catch(e){return await message.error(`${e}\n\n command: find`,e,`*_Sorry I Can't get any results, Sorry!_*`) }
 })
     //------------------------------------------------------------------------------------
 
@@ -71,14 +71,14 @@ smd({
 async(message, match) => {
  try{
 
-   message.react("🔍")
-         if (!match) return message.reply(`Give me a user name like ${prefix}github SuhailTechInfo`)
+   message.react("🤗")
+         if (!match) return message.reply(`Give me a user name like ${prefix}github itxUMAR`)
 
          const { data } = await axios(`https://api.github.com/users/${match}`)
-   if(!data) return await message.send(`*_Didn't get any results, Provide valid user name!_*`)
+   if(!data) return await message.send(`*_Sorry I Can't get any results, Provide me another gitHub user name!_*`)
    let gitdata =  data
          message.sendMessage(message.jid, {
-           image: { url: gitdata.avatar_url }, caption:`ㅤㅤㅤ*[ GITHUB USER INFO ]*
+           image: { url: gitdata.avatar_url }, caption:`ㅤㅤㅤ*[ UMAR FAROOQ ]*
 
 🚩 Id : ${gitdata.id}
 🔖 Nickname : ${gitdata.name}
@@ -104,13 +104,13 @@ smd({
    pattern: "coffe",
    alias:["tea","kofi"],
    category: "search",
-  react : "🫡",
+  react : "🌹",
    desc: "send randome coffe",
    filename: __filename,
 },
 async(m) => {
  try{
-  // m.react("🫡")
+  // m.react("😇")
    return await m.bot.sendMessage(m.chat, {image: { url: 'https://coffee.alexflipnote.dev/random' },caption: `Here is your Coffee...`, }, { quoted: m })
 
           }catch(e){return await m.error(`${e}\n\n command: coffe`,e,`*_Didn't get any results, Sorry!_*`) }
