@@ -67,7 +67,7 @@ const sendEditor = async (m,cmd, error = true,cap = Config.caption?.split("\n")[
     if(!gfxx.includes(cmd)) return 
     try{
         let mm =   m.image ? m : m.reply_message && m.reply_message.image ? m.reply_message : false; 
-        if (!mm || !photo.includes(mm.mtype2)) return m.reply(`*_Uhh Dear,  Reply To An Image!_*`);
+        if (!mm || !photo.includes(mm.mtype2)) return m.reply(`*_UMAR Please Reply To An Image!_*`);
         let media = await m.bot.downloadAndSaveMediaMessage(mm);
         var anu = ""
         try{ anu = (await createUrl(media,"uguMashi")).url; if(!anu) throw new Error("invalid Media!") }
@@ -113,7 +113,7 @@ smd({
     try{
         let mm =   m.image ? m : m.reply_message && m.reply_message.image ? m.reply_message : false; 
         
-  let too = `*Separate the text with _:_ sign!*\n*Example : ${prefix + smd} Suhail _:_ Bot*`
+  let too = `*Separate the text with _:_ sign!*\n*Example : ${prefix + smd} UMAR _: FAROOQ*`
   if(!mm) {
     let str = `┌───〈 *ᴇᴅɪᴛᴏʀ ᴍᴇɴᴜ*  〉───◆
 │╭─────────────···▸
